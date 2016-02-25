@@ -1,0 +1,97 @@
+---
+title: "Getting and Cleaning Data Week 4 Project"
+author: "Peter Bosch"
+date: "February 24, 2016"
+output: html_document
+---
+
+# Description
+This project gets, unzips, and constructs a tidy data set and summary table, from a data set located at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. This set contains several files with measurements, activities and subjects in both training and test data categories. The data in this set are described in its embedded README file.
+
+#Use
+Source the 'run_analysis.R' file and then run the run_analysis() function.
+If the data are not present, they will be downloaded and unzipped.
+When the data are present,
+
+# Processing
+The data are made tidy, with a table of all observations - both training and test data - in one place. That data is then coalesced into a summary table with a mean value for all observations of each measurement type for every subject/activity combination. They are then saved out in one sourceable dump file, and a human-readable table file for each of the unified data and the 
+
+# Code Book
+
+## Activities
+Value | Meaning
+----- | -------
+1     | Walking
+2     | Walking upstairs
+3     | Walking downstairs
+4     | Sitting
+5     | Standing
+6     | Laying
+
+## Subjects
+Subjects are individuals who performed the above activities for measurement. They are identified by number, 1 to 30.
+
+## Measurements (in 'All' table)
+Value                 | Meaning
+--------------------- | -------
+subject               | The subject measured.
+activity              | The activity being performed.
+tBodyAcc_mean_X       | Mean time domain body acceleration in the X direction.
+tBodyAcc_mean_Y       | Mean time domain body acceleration in the Y direction.
+tBodyAcc_mean_Z       | Mean time domain body acceleration in the Z direction.
+tBodyAcc_std_X        | Standard deviation of time domain body acceleration in the X direction. 
+tBodyAcc_std_Y        | Standard deviation of time domain body acceleration in the Y direction.
+tBodyAcc_std_Z        | Standard deviation of time domain body acceleration in the Z direction.
+tGravityAcc_mean_X    | Mean time domain gravity acceleration in the X direction.                 
+tGravityAcc_mean_Y    | Mean time domain gravity acceleration in the Y direction.                 
+tGravityAcc_mean_Z    | Mean time domain gravity acceleration in the Z direction.                 
+tGravityAcc_std_X     | Standard deviation of time domain gravity acceleration in the X direction.
+tGravityAcc_std_Y     | Standard deviation of time domain gravity acceleration in the Y direction.
+tGravityAcc_std_Z     | Standard deviation of time domain gravity acceleration in the Z direction.
+tBodyAccJerk_mean_X   | Mean time domain jerk (high frequency) acceleration in the X direction.                 
+tBodyAccJerk_mean_Y   | Mean time domain jerk (high frequency) acceleration in the Y direction.                 
+tBodyAccJerk_mean_Z   | Mean time domain jerk (high frequency) acceleration in the Z direction.                 
+tBodyAccJerk_std_X    | Standard deviation of time domain jerk (high frequency) acceleration in the X direction.
+tBodyAccJerk_std_Y    | Standard deviation of time domain jerk (high frequency) acceleration in the Y direction.
+tBodyAccJerk_std_Z    | Standard deviation of time domain jerk (high frequency) acceleration in the Z direction.
+tBodyGyro_mean_X      | Mean time domain gyroscopic acceleration in the X direction.                 
+tBodyGyro_mean_Y      | Mean time domain gyroscopic acceleration in the Y direction.                 
+tBodyGyro_mean_Z      | Mean time domain gyroscopic acceleration in the Z direction.                 
+tBodyGyro_std_X       | Standard deviation of time domain gyroscopic acceleration in the X direction.
+tBodyGyro_std_Y       | Standard deviation of time domain gyroscopic acceleration in the Y direction.
+tBodyGyro_std_Z       | Standard deviation of time domain gyroscopic acceleration in the Z direction.
+tBodyGyroJerk_mean_X  | Mean time domain jerk (high frequency) gyroscopic acceleration in the X direction.                 
+tBodyGyroJerk_mean_Y  | Mean time domain jerk (high frequency) gyroscopic acceleration in the Y direction.                 
+tBodyGyroJerk_mean_Z  | Mean time domain jerk (high frequency) gyroscopic acceleration in the Z direction.                 
+tBodyGyroJerk_std_X   | Standard deviation of time domain jerk (high frequency) gyroscopic acceleration in the X direction.
+tBodyGyroJerk_std_Y   | Standard deviation of time domain jerk (high frequency) gyroscopic acceleration in the Y direction.
+tBodyGyroJerk_std_Z   | Standard deviation of time domain jerk (high frequency) gyroscopic acceleration in the Z direction.
+fBodyAcc_mean_X       | Mean frequency domain body acceleration in the X direction.                 
+fBodyAcc_mean_Y       | Mean frequency domain body acceleration in the Y direction.                 
+fBodyAcc_mean_Z       | Mean frequency domain body acceleration in the Z direction.                 
+fBodyAcc_std_X        | Standard deviation of frequency domain body acceleration in the X direction.
+fBodyAcc_std_Y        | Standard deviation of frequency domain body acceleration in the Y direction.
+fBodyAcc_std_Z        | Standard deviation of frequency domain body acceleration in the Z direction.
+fBodyAccJerk_mean_X   | Mean frequency domain jerk (high frequency) acceleration in the X direction.                 
+fBodyAccJerk_mean_Y   | Mean frequency domain jerk (high frequency) acceleration in the Y direction.                 
+fBodyAccJerk_mean_Z   | Mean frequency domain jerk (high frequency) acceleration in the Z direction.                 
+fBodyAccJerk_std_X    | Standard deviation of frequency domain jerk (high frequency) acceleration in the X direction.
+fBodyAccJerk_std_Y    | Standard deviation of frequency domain jerk (high frequency) acceleration in the Y direction.
+fBodyAccJerk_std_Z    | Standard deviation of frequency domain jerk (high frequency) acceleration in the Z direction.
+fBodyGyro_mean_X      | Mean frequency domain gyroscopic acceleration in the X direction.                 
+fBodyGyro_mean_Y      | Mean frequency domain gyroscopic acceleration in the Y direction.                 
+fBodyGyro_mean_Z      | Mean frequency domain gyroscopic acceleration in the Z direction.                 
+fBodyGyro_std_X       | Standard deviation of frequency domain gyroscopic acceleration in the X direction.
+fBodyGyro_std_Y       | Standard deviation of frequency domain gyroscopic acceleration in the Y direction.
+fBodyGyro_std_Z       | Standard deviation of frequency domain gyroscopic acceleration in the Z direction.
+
+
+## Mean values of measurements (in 'summary' table.)
+Value                 | Meaning
+---------------------------------- | -------
+subject                            | The subject measured.
+activity                           | The activity being performed.
+Average_value_for_tBodyAcc_mean_X  | The average value for the 'tBodyAcc_mean_X' measurement as described above, for all measurements taken for the specified subject and activity.
+
+For each of the above measurements (in 'All' table), there is an element in the 'summary' table such as "Average_value_for_tBodyAcc_mean_X". 
+
